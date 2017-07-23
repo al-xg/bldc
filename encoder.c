@@ -26,12 +26,35 @@
 #define AS5047P_READ_ANGLECOM		(0x3FFF | 0x4000 | 0x8000) // This is just ones
 #define AS5047_SAMPLE_RATE_HZ		20000
 
-#define SPI_SW_MISO_GPIO			HW_HALL_ENC_GPIO2
+/*#define SPI_SW_MISO_GPIO			HW_HALL_ENC_GPIO2
 #define SPI_SW_MISO_PIN				HW_HALL_ENC_PIN2
 #define SPI_SW_SCK_GPIO				HW_HALL_ENC_GPIO1
 #define SPI_SW_SCK_PIN				HW_HALL_ENC_PIN1
 #define SPI_SW_CS_GPIO				HW_HALL_ENC_GPIO3
 #define SPI_SW_CS_PIN				HW_HALL_ENC_PIN3
+*/
+
+#define SPI_SW_MISO_GPIO			HW_SPI_PORT_MISO
+#define SPI_SW_MISO_PIN				HW_SPI_PIN_MISO
+#define SPI_SW_SCK_GPIO				HW_SPI_PORT_SCK
+#define SPI_SW_SCK_PIN				HW_SPI_PIN_SCK
+#define SPI_SW_CS_GPIO				HW_SPI_PORT_NSS	
+#define SPI_SW_CS_PIN				HW_SPI_PIN_NSS
+
+/*
+Copied from hw_410.h
+
+#define HW_SPI_DEV				SPID1
+#define HW_SPI_GPIO_AF			GPIO_AF_SPI1
+#define HW_SPI_PORT_NSS			GPIOA
+#define HW_SPI_PIN_NSS			4
+#define HW_SPI_PORT_SCK			GPIOA
+#define HW_SPI_PIN_SCK			5
+#define HW_SPI_PORT_MOSI		GPIOA
+#define HW_SPI_PIN_MOSI			7
+#define HW_SPI_PORT_MISO		GPIOA
+#define HW_SPI_PIN_MISO			6
+*/
 
 // Private types
 typedef enum {
